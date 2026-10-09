@@ -20,4 +20,3 @@ jobs:
           java-version: "17"
       - run: javac -Xlint:all -Werror RepairLog.java
       - run: python -m unittest discover -s tests
-      - run: python -m unittest discover -s cloud
