@@ -1,28 +1,32 @@
 # Repair Log
 
-Gestão de solicitações com prioridades, responsáveis, transições de estado, revisão esperada e histórico de eventos persistente.
+Request management with priorities, assignees, state transitions, expected revisions, and a persistent event history.
 
-## Executar
+## Run
 
-Requisitos: Java 17.
+Requirements: Java 17.
 
 ```sh
 javac RepairLog.java
 java RepairLog reparos.log add centro 3 "Reparar luminária"
-java RepairLog reparos.log report > resultado.json
+java RepairLog reparos.log report > result.json
 ```
 
-## Funcionamento
+## Behavior
 
-Comandos: `assign id revisão operador`, `transition id revisão estado motivo` e `report`. Estados: OPEN, ASSIGNED, IN_PROGRESS, RESOLVED e CLOSED. O replay verifica sequência de revisões e encadeamento SHA-256.
+Commands: `assign id revision operator`, `transition id revision state reason`, and `report`. States: OPEN, ASSIGNED, IN_PROGRESS, RESOLVED, and CLOSED. Replay verifies the revision sequence and SHA-256 chain.
 
-## Persistência de resultados
+## Result synchronization
 
-O arquivo de operações está em [vercel-home-telemetry-api.vercel.app](https://vercel-home-telemetry-api.vercel.app/laboratory.html?project=java-neighborhood-repair-log). As migrações Supabase estão no [repositório da API](https://github.com/brunnojob/vercel-home-telemetry-api/tree/main/supabase/migrations).
+The [operations archive](https://vercel-home-telemetry-api.vercel.app/laboratory.html?project=java-neighborhood-repair-log) stores execution results. Supabase migrations are in the [API repository](https://github.com/brunnojob/vercel-home-telemetry-api/tree/main/supabase/migrations).
 
 ```sh
-python cloud/sync.py enqueue resultado.json --project java-neighborhood-repair-log
+python cloud/sync.py enqueue result.json --project java-neighborhood-repair-log
 python cloud/sync.py sync
 ```
 
-Defina `BRUNNODEV_ACCESS_TOKEN` com sua sessão. A fila SQLite conserva os relatórios até confirmação do servidor; o mesmo conteúdo não gera registros duplicados. Tokens não são gravados no código.
+Set `BRUNNODEV_ACCESS_TOKEN` to your session token. The SQLite outbox retains reports until the server confirms persistence; identical content does not create duplicate records. Tokens are not stored in source code. To run the synchronization tests:
+
+```sh
+python -m unittest discover -s cloud
+```
