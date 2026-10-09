@@ -153,7 +153,10 @@ public final class RepairLog {
     var tickets = new ArrayList<>(replay.tickets().values());
     tickets.sort(
         Comparator.comparingInt(Ticket::priority).reversed().thenComparing(Ticket::created));
-    System.out.print("{\"events\":" + replay.events() + ",\"tickets\":[");
+    long active = tickets.stream().filter(t -> t.state() != State.RESOLVED && t.state() != State.CLOSED).count();
+    long unassigned = tickets.stream().filter(t -> t.state() == State.OPEN && t.assignee().isEmpty()).count();
+    System.out.print("{\"events\":" + replay.events() + ",\"active\":" + active +
+        ",\"unassigned\":" + unassigned + ",\"tickets\":[");
     for (int i = 0; i < tickets.size(); i++) {
       Ticket t = tickets.get(i);
       if (i > 0) System.out.print(",");
