@@ -28,7 +28,7 @@ Original source and documentation are MIT licensed; see [LICENSE](LICENSE). Thir
 
 Report summaries include active requests and unassigned open requests, keeping actionable workload separate from closed history.
 
-Contribution trailer: `Co-authored-by: nyctophile <329826984+ineedfoundmyway@users.noreply.github.com>`.
+Contribution trailer: `Co-authored-by: nyctophile <33561761+ineedfoundmyway@users.noreply.github.com>`.
 
 ## Execution proof
 
