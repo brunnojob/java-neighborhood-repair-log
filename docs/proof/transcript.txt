@@ -4,6 +4,9 @@ $ bash -e -o pipefail -c python -m unittest discover -v -s tests
 test_persistent_workflow (test_workflow.WorkflowTests.test_persistent_workflow) ... ok
 
 ----------------------------------------------------------------------
-Ran 1 test in 1.373s
+Ran 1 test in 1.408s
 
 OK
+
+$ python .proof/demo.py
+{"report": {"active": 1, "events": 3, "tickets": [{"area": "zone", "assignee": "operator", "description": "repair", "id": "538531f7-c0b8-4b21-8eaa-77f01a44ae96", "priority": 3, "revision": 3, "state": "IN_PROGRESS", "updated": "2026-10-10T02:44:18.755011561Z"}], "unassigned": 0}, "stale_revision_rejected": true}

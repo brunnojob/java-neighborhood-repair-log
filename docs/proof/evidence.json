@@ -1,11 +1,12 @@
 {
   "schema": 1,
   "repository": "brunnojob/java-neighborhood-repair-log",
-  "source_commit": "1ed4d01350334520f7c6af91da8e54da41939dc3",
-  "generated_at": "2026-10-10T02:36:06.957200+00:00",
-  "run_url": "https://github.com/brunnojob/java-neighborhood-repair-log/actions/runs/38017548872",
+  "source_commit": "8167dbd6d62f129186c2c547376fcc3b6ab4614a",
+  "generated_at": "2026-10-10T02:44:14.770939+00:00",
+  "run_url": "https://github.com/brunnojob/java-neighborhood-repair-log/actions/runs/38018041879",
   "inputs_sha256": {
-    ".proof/scenarios.json": "de8c6c707d396c72e644415db1ae47eec04cefe76223bbdef9fe398067e46fef"
+    ".proof/scenarios.json": "95c043102084fb45930c700127e6e3921695cd1307d1e4d88edaecf84f6b48f2",
+    ".proof/demo.py": "aa32aa7c88c4ba4f35993431a3926154f100af9ce90aa1041909e71f413641b5"
   },
   "cases": [
     {
@@ -22,7 +23,7 @@
       "exit": 0,
       "expected_exit": 0,
       "passed": true,
-      "seconds": 5.166,
+      "seconds": 2.01,
       "output": "",
       "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -40,9 +41,23 @@
       "exit": 0,
       "expected_exit": 0,
       "passed": true,
-      "seconds": 1.96,
-      "output": "test_persistent_workflow (test_workflow.WorkflowTests.test_persistent_workflow) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 1.373s\n\nOK\n",
-      "output_sha256": "feecb7782082e1aeb68ec96c5bc122aada3255cfcc33773463184ba371a9618c"
+      "seconds": 1.557,
+      "output": "test_persistent_workflow (test_workflow.WorkflowTests.test_persistent_workflow) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 1.408s\n\nOK\n",
+      "output_sha256": "865abbf117ffbb099b9403fd8d54ffc640476d9bf3ece4421360d9f670142f51"
+    },
+    {
+      "display": true,
+      "name": "Persist a maintenance ticket with optimistic revision checks",
+      "argv": [
+        "python",
+        ".proof/demo.py"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 0.505,
+      "output": "{\"report\": {\"active\": 1, \"events\": 3, \"tickets\": [{\"area\": \"zone\", \"assignee\": \"operator\", \"description\": \"repair\", \"id\": \"538531f7-c0b8-4b21-8eaa-77f01a44ae96\", \"priority\": 3, \"revision\": 3, \"state\": \"IN_PROGRESS\", \"updated\": \"2026-10-10T02:44:18.755011561Z\"}], \"unassigned\": 0}, \"stale_revision_rejected\": true}\n",
+      "output_sha256": "b675955f9262dfc00b8bc655d8efb4cf4077f680c57a40fdb459d0b137489a81"
     }
   ],
   "passed": true
