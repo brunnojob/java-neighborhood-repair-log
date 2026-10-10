@@ -1,0 +1,9 @@
+$ bash -e -o pipefail -c javac -Xlint:all -Werror RepairLog.java
+
+$ bash -e -o pipefail -c python -m unittest discover -v -s tests
+test_persistent_workflow (test_workflow.WorkflowTests.test_persistent_workflow) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 1.373s
+
+OK

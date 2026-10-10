@@ -1,7 +1,8 @@
 {
   "repository": "brunnojob/java-neighborhood-repair-log",
   "inputs": [
-    ".proof/scenarios.json"
+    ".proof/scenarios.json",
+    ".proof/demo.py"
   ],
   "cases": [
     {
@@ -29,6 +30,17 @@
       ],
       "timeout": 900,
       "display": true
+    },
+    {
+      "name": "Persist a maintenance ticket with optimistic revision checks",
+      "argv": [
+        "python",
+        ".proof/demo.py"
+      ],
+      "contains": [
+        "\"stale_revision_rejected\": true"
+      ],
+      "timeout": 120
     }
   ]
 }

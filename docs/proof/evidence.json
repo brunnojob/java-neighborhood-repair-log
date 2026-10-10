@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "repository": "brunnojob/java-neighborhood-repair-log",
+  "source_commit": "1ed4d01350334520f7c6af91da8e54da41939dc3",
+  "generated_at": "2026-10-10T02:36:06.957200+00:00",
+  "run_url": "https://github.com/brunnojob/java-neighborhood-repair-log/actions/runs/38017548872",
+  "inputs_sha256": {
+    ".proof/scenarios.json": "de8c6c707d396c72e644415db1ae47eec04cefe76223bbdef9fe398067e46fef"
+  },
+  "cases": [
+    {
+      "display": false,
+      "name": "javac -Xlint:all -Werror RepairLog.java",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "javac -Xlint:all -Werror RepairLog.java"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 5.166,
+      "output": "",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "display": true,
+      "name": "python -m unittest discover -v -s tests",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "python -m unittest discover -v -s tests"
+      ],
+      "exit": 0,
+      "expected_exit": 0,
+      "passed": true,
+      "seconds": 1.96,
+      "output": "test_persistent_workflow (test_workflow.WorkflowTests.test_persistent_workflow) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 1.373s\n\nOK\n",
+      "output_sha256": "feecb7782082e1aeb68ec96c5bc122aada3255cfcc33773463184ba371a9618c"
+    }
+  ],
+  "passed": true
+}
