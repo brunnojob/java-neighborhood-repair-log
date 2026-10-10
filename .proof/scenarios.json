@@ -1,0 +1,34 @@
+{
+  "repository": "brunnojob/java-neighborhood-repair-log",
+  "inputs": [
+    ".proof/scenarios.json"
+  ],
+  "cases": [
+    {
+      "name": "javac -Xlint:all -Werror RepairLog.java",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "javac -Xlint:all -Werror RepairLog.java"
+      ],
+      "timeout": 900,
+      "display": false
+    },
+    {
+      "name": "python -m unittest discover -v -s tests",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "python -m unittest discover -v -s tests"
+      ],
+      "timeout": 900,
+      "display": true
+    }
+  ]
+}
